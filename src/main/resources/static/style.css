@@ -37,10 +37,19 @@ ul {
 }
 
 li {
-	list-style: none;
-	font-size: 25px;
-	margin: 10px 0;
+	list-style-type: none;
+	width: 100%;
+	height: 100px;
 	background-color: var(--item-background);
+	margin: 5px 0;
+}
+
+.content {
+	width: 65%;
+	height: 100%;
+	font-size: 30px;
+	float: left;
+	margin-right: 10px;
 }
 
 .title {
@@ -51,26 +60,38 @@ li {
 	color: var(--text_detail);
 }
 
-li span {
+.title, .detail {
 	display: block;
-	height: max-content;
 	width: 100%;
+	height: 45px;
+	margin: 2.5px 0;
+}
+
+.function_buttons {
+	width: 30%;
+	height: 100%;
+	float: right;
 }
 
 a {
 	display: flex;
+	width: 120px;
+	height: 45px;
+	background-color: var(--button-color);
+	margin: 2.5px auto;
+	border-radius: 8px;
 	align-items: center;
 	justify-content: center;
-	margin: 10px auto;
 	font-size: 25px;
-	width: 120px;
-	height: 40px;
-	background-color: var(--button-color);
-	border-radius: 8px;
-	font-weight: 900;
+	color: var(--text);
 }
 
 a:-webkit-any-link {
 	text-decoration: none;
-	color: var(--text);
+	font-weight: 800;
 }
+
+.add {
+	margin-top: 30px;
+}
+

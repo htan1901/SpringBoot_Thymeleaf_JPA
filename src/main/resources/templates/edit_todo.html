@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" th:href="@{/add_todo.css}">
+	<title>Todo App</title>
+</head>
+<body>
+	<h3>Edit Todo</h3>
+	<form th:action="@{/edit/{id}(id = ${todo.getId()})}" th:object="${todo}" method="post">
+		<p class="title">
+			<span>Title: </span>
+			<input type="text" name="title" th:field="*{title}">
+		</p>
+		<p class="detail">
+			<span>Detail: </span>
+			<input type="text" name="detail" th:field="*{detail}">
+		</p>
+		<button type="submit">Save</button>
+	</form>
+</body>
+</html>

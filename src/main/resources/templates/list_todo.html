@@ -4,20 +4,27 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<link rel="stylesheet" th:href="@{/style.css}">
+	<!-- <link rel="stylesheet" href="./style.css"> -->
 	<title>Todo App</title>
 </head>
 <body>
 	<h3>My simple Todo App </h3>
 	<ul>
 		<li th:each="todo : ${listTodo}">
-			<span class="title" th:text="*{todo.getTitle()}">
-				heelo
-			</span>
-			<span class="detail" th:text="*{todo.getDetail()}">
-				hello
-			</span>
+			<div class="content">
+				<span class="title" th:text="*{todo.getTitle()}">
+					Hello
+				</span>
+				<span class="detail" th:text="*{todo.getDetail()}">
+					Holle
+				</span>
+			</div>
+			<p class="function_buttons">
+				<a th:href="@{/edit/{id}(id=*{todo.getId()})}" class="update">Update</a>
+				<a th:href="@{/edit/delete/{id}(id=*{todo.getId()})}" class="delete">Delete</a>
+			</p>
 		</li>
 	</ul>	
-	<a th:href="@{/add}">Add Todo</a>
+	<a class="add" th:href="@{/add}">Add Todo</a>
 </body>
 </html>
